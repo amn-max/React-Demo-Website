@@ -79,11 +79,11 @@ class Header extends React.Component {
                                 </div>
                             }
                         </button>
-                        <button className="btn btn-danger" style={{marginLeft:8, borderRadius: 2}} >
+                        <button onClick={this.userToggle} className="btn btn-danger" style={{marginLeft:8, borderRadius: 2}} >
                         {
                             this.state.isLoggedIn?
-                            <p className="container middle" onClick={this.userToggle} style={{ margin: 0, padding: 2 }}>Login <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>:
-                            <p className="container middle" onClick={this.userToggle} style={{ margin: 0, padding: 2 }}>Logout <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>
+                            <p className="container middle" style={{ margin: 0, padding: 2 }}>Login <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>:
+                            <p className="container middle" style={{ margin: 0, padding: 2 }}>Logout <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>
                         }
                         </button>
                     </div>
@@ -94,11 +94,11 @@ class Header extends React.Component {
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item>
-                                <button className="btn btn-danger" style={{marginLeft:8, borderRadius: 2}} >
+                                <button onClick={this.userToggle} className="btn btn-danger" style={{marginLeft:8, borderRadius: 2}} >
                                 {
                                 this.state.isLoggedIn?
-                                    <p className="container middle" onClick={this.userToggle} style={{ margin: 0, padding: 2 }}>Login <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>:
-                                    <p className="container middle" onClick={this.userToggle} style={{ margin: 0, padding: 2 }}>Logout <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>
+                                    <p className="container middle" style={{ margin: 0, padding: 2 }}>Login <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>:
+                                    <p className="container middle" style={{ margin: 0, padding: 2 }}>Logout <FontAwesomeIcon style={{marginLeft:5}} icon={faSignInAlt}></FontAwesomeIcon></p>
                                 }
                                 </button>
                                 </Dropdown.Item>
