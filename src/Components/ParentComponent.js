@@ -3,6 +3,7 @@ import MainContent from './MainContent';
 import MailList from './MailList';
 import ProductsComponent from './Products';
 import Products from '../Data/Products';
+import StartWarsApi from './starwarsApi';
 
 
 class Parent extends React.Component {
@@ -54,6 +55,9 @@ class Parent extends React.Component {
                     <br></br>
                     <br></br>
                     {productsComponent}
+                    <h1>Starwars</h1>
+                    <StartWarsApi />
+                    
                 </div>
             )
         }

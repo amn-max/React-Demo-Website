@@ -111,6 +111,13 @@ code {
   display: none;
 }
 
+.character-details p{
+  margin: 0;
+  margin-left: 40px;
+  padding: 0;
+  color:#212121;
+}
+
 @media screen and (max-width:430px){
   .navbar-rightSide{
     display: none;
@@ -119,3 +126,4 @@ code {
     display: block;
   }
 }
+
