@@ -26,15 +26,10 @@ class Header extends React.Component {
             showDropDown: false,
             isLoggedIn: false
         }
-        this.handleMessageClick = this.handleMessageClick.bind(this)
+
         this.userToggle = this.userToggle.bind(this)
     }
 
-    handleMessageClick() {
-        this.setState = ({
-            messageRead: true
-        })
-    }
 
     userToggle(){
         this.setState(prevState => {

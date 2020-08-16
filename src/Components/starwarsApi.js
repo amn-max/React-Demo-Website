@@ -1,6 +1,7 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCaretRight,faCaretDown} from '@fortawesome/free-solid-svg-icons'
+import {faCaretRight,faCaretDown} from '@fortawesome/free-solid-svg-icons';
+
 
 class StarwarsApi extends React.Component{
     constructor(){
@@ -53,6 +54,8 @@ class StarwarsApi extends React.Component{
             padding: "8px",
             borderRadius:"12px"
         }
+
+      
 
         const ListfilmsComponent = this.state.filmsList.map(item => <p style={{marginLeft:100}} key={this.state.filmsList.indexOf(item)}>{item}</p>)
 

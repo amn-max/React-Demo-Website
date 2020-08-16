@@ -4,35 +4,50 @@ import MailList from './MailList';
 import ProductsComponent from './Products';
 import Products from '../Data/Products';
 import StartWarsApi from './starwarsApi';
-
-
+import { fadeInUp } from 'react-animations';
+import Radium, { StyleRoot } from 'radium';
 class Parent extends React.Component {
 
-    constructor(){
+    constructor() {
         super()
-        this.state={
+        this.state = {
             isLoggedIn: true
         }
     }
 
     render() {
-    let DisplayLogged
-    if(this.state.isLoggedIn === true){
-      DisplayLogged = "Your are logged in as Ayush Naik"
-    }
-    else{
-      DisplayLogged = "Your are not logged in"
-    }
-    const productsComponent = Products.map(product => <ProductsComponent key={product.id} name={product.name} price={product.price} description={product.description}/>)
-        if(this.props.isLoading){
-            return(
-                <div className="container middle">
-                    <h1 style={{padding:90}}>Loading Content!...</h1>
-                </div>
-            )            
-        }else{
+
+        const styles = {
+            fadeInUp: {
+                animation: 'x 1s',
+                animationName: Radium.keyframes(fadeInUp, 'fadeInUp')
+            }
+        }
+
+        const padding = {
+            padding:"90px"
+        }
+
+        let DisplayLogged
+        if (this.state.isLoggedIn === true) {
+            DisplayLogged = "Your are logged in as Ayush Naik"
+        }
+        else {
+            DisplayLogged = "Your are not logged in"
+        }
+        const productsComponent = Products.map(product => <ProductsComponent key={product.id} name={product.name} price={product.price} description={product.description} />)
+        if (this.props.isLoading) {
             return (
-                <div className="container">
+                <div style={padding} className="container middle">
+                    <StyleRoot>
+                        <h1 style={styles.bounce}>Loading Content!...</h1>
+                    </StyleRoot>
+                </div>
+            )
+        } else {
+            return (
+                <StyleRoot>
+                    <div style={styles.fadeInUp} className="container">
                     <br></br>
                     <br></br>
                     <h2 className="middle">{DisplayLogged}</h2>
@@ -57,8 +72,9 @@ class Parent extends React.Component {
                     {productsComponent}
                     <h1>Starwars</h1>
                     <StartWarsApi />
-                    
-                </div>
+
+                    </div>
+                </StyleRoot>
             )
         }
     }

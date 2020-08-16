@@ -2,6 +2,8 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import TodosComponent from './todosComponent';
 import TodosData from '../Data/todosData';
+import {fadeInLeft} from 'react-animations';
+import Radium, { StyleRoot } from 'radium';
 
 // function MainContent(){
 //        var date = new Date()
@@ -80,13 +82,22 @@ class MainContent extends React.Component {
         })
     }
 
+    
 
     render() {
+        const styles = {
+            fadeInLeft:{
+                animation: 'x 1s',
+                animationName: Radium.keyframes(fadeInLeft,'fadeInLeft')
+            }
+        }
         const todoComponent = this.state.todos.map(todo => <TodosComponent key={todo.id} item={todo} handleChange={this.handleChange}/>)
         return (
+            <StyleRoot>
             <div className="container">
                 <div className="row">
-                <div className="container col-lg-5 middle border">
+                
+                <div style={styles.fadeInLeft} className="container col-lg-5 middle border">
                     <h4>Places I want to visit</h4>
                     <ul className="list">
                         <li><Button variant="primary">Tokyo</Button></li>
@@ -97,12 +108,14 @@ class MainContent extends React.Component {
                         <p>Today is  {this.state.date.toLocaleTimeString()}</p>
                     </main>
                 </div>
-                <div className="container col-lg-5 middle border">
+               
+                <div style={styles.fadeInLeft} className="container col-lg-5 middle border">
                     <h4>TODOS List</h4>
                     {todoComponent}
                 </div>
+                </div>
             </div>
-            </div>
+            </StyleRoot>
         )
     }
     componentDidMount() {
